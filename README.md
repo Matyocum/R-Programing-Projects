@@ -146,9 +146,9 @@ barplot(table16,beside = TRUE, main = "Churn - Payment Method", ylim = c(0,2000)
 
 #### Missing payment method due to crowding. Making adjustments to the factors via levels.
 
-levels(Telco_Customers$PaymentMethod)
+
 levels(Telco_Customers$PaymentMethod)<-c("Bank transfer","Credit card","Electronic check","Mailed check")
-levels(Telco_Customers$PaymentMethod)
+
 
 #### Much better.
 
