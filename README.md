@@ -88,9 +88,29 @@ barplot(table9,beside = TRUE, main = "Churn - Online Backup", ylim = c(0,2500),
 
 ![image](https://user-images.githubusercontent.com/114650133/199351879-50fec7d5-2e48-4abe-8c9e-3dabf30074a4.png)
 
+table(Telco_Customers$Churn,Telco_Customers$DeviceProtection)
+table10<-table(Telco_Customers$Churn,Telco_Customers$DeviceProtection)
+barplot(table10,beside = TRUE, main = "Churn - Device Protection", ylim = c(0,2500),
+        legend.text = row.names(table10),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
 
+![image](https://user-images.githubusercontent.com/114650133/199352079-1a262ce9-ed0f-44e9-a85d-43cdea20ef00.png)
 
+table(Telco_Customers$churn,Telco_Customers$techsupport)
+table11<-table(Telco_Customers$Churn,Telco_Customers$TechSupport)
+barplot(table11,beside = TRUE, main = "Churn - Tech Support", ylim = c(0,2500),
+        legend.text = row.names(table11),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
 
+![image](https://user-images.githubusercontent.com/114650133/199352206-adc59ab8-8d16-42eb-91fe-fb84b18b627e.png)
+
+table(Telco_Customers$churn,Telco_Customers$streamingtv)
+table12<-table(Telco_Customers$Churn,Telco_Customers$StreamingTV)
+barplot(table12,beside = TRUE, main = "Churn - Streaming TV", ylim = c(0,2500),
+        legend.text = row.names(table12),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
+
+![image](https://user-images.githubusercontent.com/114650133/199352307-575d4dac-8c96-4025-b287-35c07ebf6327.png)
 
 
 
