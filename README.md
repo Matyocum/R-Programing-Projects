@@ -112,8 +112,47 @@ barplot(table12,beside = TRUE, main = "Churn - Streaming TV", ylim = c(0,2500),
 
 ![image](https://user-images.githubusercontent.com/114650133/199352307-575d4dac-8c96-4025-b287-35c07ebf6327.png)
 
+table(Telco_Customers$churn,Telco_Customers$streamingmovies)
+table13<-table(Telco_Customers$Churn,Telco_Customers$StreamingMovies)
+barplot(table13,beside = TRUE, main = "Churn - Streaming Movies", ylim = c(0,2500),
+        legend.text = row.names(table13),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
 
+![image](https://user-images.githubusercontent.com/114650133/199352524-d830a472-d868-45ce-853d-2296e9976765.png)
 
+table(Telco_Customers$churn,Telco_Customers$contract)
+table14<-table(Telco_Customers$Churn,Telco_Customers$Contract)
+barplot(table14,beside = TRUE, main = "Churn - Contract", ylim = c(0,2500),
+        legend.text = row.names(table14),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
+        
+![image](https://user-images.githubusercontent.com/114650133/199352600-e317a969-b510-49c0-8cc4-35663ce559d3.png)
+
+table(Telco_Customers$churn,Telco_Customers$paperlessbilling)
+table15<-table(Telco_Customers$Churn,Telco_Customers$PaperlessBilling)
+barplot(table15,beside = TRUE, main = "Churn - Paperless Billing", ylim = c(0,3000),
+        legend.text = row.names(table15),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
+
+![image](https://user-images.githubusercontent.com/114650133/199352675-d78be3ff-8cf8-4983-8b78-ae2957481f48.png)
+
+table(Telco_Customers$churn,Telco_Customers$paymentmethod)
+table16<-table(Telco_Customers$Churn,Telco_Customers$PaymentMethod)
+barplot(table16,beside = TRUE, main = "Churn - Payment Method", ylim = c(0,2000),
+        legend.text = row.names(table16),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
+        
+![image](https://user-images.githubusercontent.com/114650133/199352751-ba646fe0-4518-408d-bc2f-b7e31087fded.png)
+
+#### Missing payment method due to crowding. Making adjustments to the factors via levels.
+
+levels(Telco_Customers$PaymentMethod)
+levels(Telco_Customers$PaymentMethod)<-c("Bank transfer","Credit card","Electronic check","Mailed check")
+levels(Telco_Customers$PaymentMethod)
+
+#### Much better.
+
+![image](https://user-images.githubusercontent.com/114650133/199353176-05bf54d8-1da0-42d7-979c-78ad70d29a99.png)
 
 
 
