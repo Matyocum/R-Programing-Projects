@@ -173,9 +173,16 @@ barplot(table17,beside = TRUE, xlab='Months',main = "Churn - Tenure ", ylim = c(
 
 ![image](https://user-images.githubusercontent.com/114650133/199354747-22e6f12b-1acc-4848-8e71-ad604600a396.png)
 
+hist(Telco_Customers$MonthlyCharges, main = "Monthly Charges",xlab = "Dollars", ylim = c(0,1100))
 
+![image](https://user-images.githubusercontent.com/114650133/199354991-53de0f73-03d3-492f-9950-c50ed6d64cf7.png)
 
+table19<-table(Telco_Customers$Churn,Telco_Customers$monthlycharges4)
+barplot(table19,beside = TRUE,main = "Churn - Monthly Charges ", ylim = c(0,1500),
+        legend.text = row.names(table19),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
 
+![image](https://user-images.githubusercontent.com/114650133/199355101-9d9d337f-7ec7-44e1-8dc9-6ac7709853c4.png)
 
 
 
