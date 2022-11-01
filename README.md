@@ -154,7 +154,24 @@ levels(Telco_Customers$PaymentMethod)<-c("Bank transfer","Credit card","Electron
 
 ![image](https://user-images.githubusercontent.com/114650133/199353176-05bf54d8-1da0-42d7-979c-78ad70d29a99.png)
 
+#### Splitting variables into ranges. 
 
+hist(tenure,beside = TRUE, main = "Tenure in months", ylim = c(0,1500), xlim = c(0,90),xlab = "Months")
+
+![image](https://user-images.githubusercontent.com/114650133/199354496-92015bd0-4118-4660-8293-5e25ddcd48fe.png)
+
+Telco_Customers$tenure_age1<-cut(Telco_Customers$tenure, c(0,12,24,48,60,72))
+Telco_Customers$tenure_age2<-cut(Telco_Customers$tenure, seq(0,72,12))
+Telco_Customers$tenure_age3<-cut(Telco_Customers$tenure, seq(0,72,12), right=FALSE)
+Telco_Customers$tenure_age4<-cut(Telco_Customers$tenure, seq(0,72,12), right=FALSE, labels=c(1:6))
+levels(Telco_Customers$tenure_age4)<- c("0-12","13-24","25-36","37-48","49-60","61-72")
+
+table17<-table(Telco_Customers$Churn,Telco_Customers$tenure_age4)
+barplot(table17,beside = TRUE, xlab='Months',main = "Churn - Tenure ", ylim = c(0,2000),
+        legend.text = row.names(table17),
+        col=c("grey","lightblue"),args.legend = list(x="topright"))
+
+![image](https://user-images.githubusercontent.com/114650133/199354747-22e6f12b-1acc-4848-8e71-ad604600a396.png)
 
 
 
